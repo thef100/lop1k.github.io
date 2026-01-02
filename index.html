@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лопик виноват</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        #result-area {
+            font-size: 1.2rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            background-color: #222;
+            color: #ffd700; /* Золотой цвет текста */
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Анимация мигания при выборе */
+        .shuffling {
+            color: #888 !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>В чём виноват лопик?</h1>
+    
+    <div id="result-area">
+        Нажмите кнопку, чтобы начать
+    </div>
+
+    <button onclick="spinRoulette()">Крутить рулетку</button>
+</div>
+
+<script>
+    // --- ЗДЕСЬ МОЖНО ИЗМЕНИТЬ СПИСОК ВАРИАНТОВ ---
+const events = [
+    "Пожар в клубе «Хромая лошадь» — 2009",
+    "Теракт на Дубровке — 2002",
+    "Теракт в аэропорту Домодедово — 2011",
+    "Взрыв жилого дома на Каширке — 1999",
+    "Взрыв жилого дома на Гурьянова — 1999",
+    "Теракт на станции метро «Автозаводская» — 2004",
+    "Теракт на станции метро «Рижская» — 2004",
+    "Теракт в московском метро на перегоне «Лубянка» — «Охотный Ряд» — 2010",
+    "Теракт на станции «Тушинская» — 2004",
+    "Падение вертолёта Ми-8 в Ижевске — 2004",
+    "Авария на Ижевской ТЭЦ — 2009",
+    "Пожар в общежитии ИжГТУ — 2001",
+    "ДТП с автобусом под Ижевском — 2016",
+    "Пожар в детском лагере «Зубрёнок» — 2022",
+    "Трагедия в Крымском — 2012",
+    "Наводнение в Крымске — 2012",
+    "Теракт в Беслане — 2004",
+    "Теракт в Будённовске — 1995",
+    "Трагедия в Перми (пожар в ТЦ) — 2018",
+    "Пожар в торговом центре «Зимняя вишня» — 2018",
+    "Крушение поезда Москва–Киев — 1994",
+    "Авиакатастрофа Ту-154 под Сочи — 2016",
+    "Крушение Ан-24 в Удмуртии — 1981",
+    "Авария на Чернобыльской АЭС — 1986",
+    "Пожар на Останкинской телебашне — 2000",
+    "Обрушение крыши Басманного рынка — 2006",
+    "Теракт в Волгограде (вокзал) — 2013",
+    "Теракт в Волгограде (троллейбус) — 2013",
+    "Трагедия в Кемерово (пожар в ТЦ «Зимняя вишня») — 2018",
+    "Пожар в доме престарелых под Москве — 2012",
+    "Авария на шахте «Распадская» — 2010",
+    "Крушение вертолёта Ми-8 на Ямале — 2018",
+    "Пожар в психоневрологическом интернате под Курском — 2013",
+    "Трагедия в Домодедово (давка) — 1990-е (точный год неясен)",
+    "Авиакатастрофа Як-42 под Ярославлем — 2011"
+];
+
+    const resultArea = document.getElementById('result-area');
+    let isSpinning = false;
+
+    function spinRoulette() {
+        if (isSpinning) return; // Защита от повторного нажатия во время вращения
+        isSpinning = true;
+        
+        let counter = 0;
+        const totalShuffles = 20; // Сколько раз мелькнут варианты перед остановкой
+        const speed = 100; // Скорость перебора в мс
+
+        resultArea.classList.add('shuffling');
+
+        // Эффект перебора вариантов
+        const interval = setInterval(() => {
+            const randomIndex = Math.floor(Math.random() * events.length);
+            resultArea.innerText = events[randomIndex];
+            counter++;
+
+            if (counter >= totalShuffles) {
+                clearInterval(interval);
+                finalizeChoice();
+            }
+        }, speed);
+    }
+
+    function finalizeChoice() {
+        // Финальный выбор
+        const finalIndex = Math.floor(Math.random() * events.length);
+        resultArea.innerText = events[finalIndex];
+        
+        resultArea.classList.remove('shuffling');
+        isSpinning = false;
+    }
+</script>
+
+</body>
+</html>
