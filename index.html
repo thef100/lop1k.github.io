@@ -17,20 +17,8 @@
     *{box-sizing:border-box}
     html,body{margin:0;min-height:100%;font-family:Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text)}
     body{min-width:320px}
-
     .page{width:100%;min-height:100vh;background:var(--bg)}
-
-    .appbar{
-      height:46px;
-      background:#fff;
-      display:flex;
-      align-items:center;
-      padding:0 18px;
-      border-bottom:1px solid #f0eff3;
-      position:sticky;
-      top:0;
-      z-index:10;
-    }
+    .appbar{height:46px;background:#fff;display:flex;align-items:center;padding:0 18px;border-bottom:1px solid #f0eff3;position:sticky;top:0;z-index:10}
     .brand{width:52px;font-weight:900;font-size:12px;line-height:11px;color:#23133f;letter-spacing:.15px;text-transform:uppercase;display:flex;flex-direction:column;justify-content:center}
     .brand span:first-child{letter-spacing:.45px}
     .school-tile{width:24px;height:24px;border:1px solid #d9dbe1;border-radius:3px;margin-left:10px;background:linear-gradient(135deg,#f7fbff,#e9f3ff);position:relative;box-shadow:inset 0 0 0 1px #fff}.school-tile:before{content:"";position:absolute;left:5px;bottom:5px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:9px solid #80c989}.school-tile:after{content:"";position:absolute;right:5px;top:5px;width:5px;height:5px;border-radius:50%;background:#9ec7ff}
@@ -39,24 +27,22 @@
     .magic{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 65% 35%,#ff5ecb 0 13%,transparent 14%),conic-gradient(from 210deg,#4b65ff,#6a34f2,#ed49c9,#40c7ed,#4b65ff);box-shadow:0 1px 3px rgba(70,39,160,.18);margin-right:18px;position:relative}.magic:after{content:"";position:absolute;inset:6px;border-radius:50%;background:rgba(255,255,255,.35)}
     .bell{width:24px;height:24px;margin-right:20px;position:relative}.bell:before{content:"";position:absolute;left:5px;top:5px;width:13px;height:14px;border:2px solid #1d1238;border-top-left-radius:9px;border-top-right-radius:9px;border-bottom:0}.bell:after{content:"";position:absolute;left:9px;top:20px;width:6px;height:2px;background:#1d1238;border-radius:3px}.badge{position:absolute;right:-7px;top:-7px;background:#f27621;color:#fff;border-radius:10px;height:17px;min-width:17px;padding:0 4px;display:grid;place-items:center;font-size:10px;font-weight:800;box-shadow:0 0 0 2px #fff}
     .user-round{width:27px;height:27px;border-radius:50%;background:#f0a24a;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:.2px;margin-right:2px}.small-down{width:17px;height:17px;position:relative}.small-down:after{content:"";position:absolute;left:4px;top:5px;width:7px;height:7px;border-right:1.7px solid #7c7b85;border-bottom:1.7px solid #7c7b85;transform:rotate(45deg)}
-
     .profile-zone{background:#fff;padding:10px 18px;border-bottom:1px solid #f2f0f5}
     .profile-card{max-width:960px;margin:0 auto;height:44px;border:1px solid #eceaf0;border-radius:10px;display:flex;align-items:center;padding:0 12px;background:#fff;box-shadow:0 1px 2px rgba(28,24,54,.03)}
     .profile-avatar{width:31px;height:31px;border-radius:50%;background:#40c4cf;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;margin-right:10px;letter-spacing:.2px}.profile-info{min-width:0;flex:1}.profile-name{font-size:13px;line-height:16px;color:#35323e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.profile-sub{font-size:12px;line-height:14px;color:#8a8793}.profile-chev{width:18px;height:18px;position:relative}.profile-chev:after{content:"";position:absolute;left:4px;top:5px;width:8px;height:8px;border-right:1.7px solid #898894;border-bottom:1.7px solid #898894;transform:rotate(45deg)}
-
     .content{max-width:960px;margin:0 auto;padding:18px 18px 30px}
     h1{font-size:20px;line-height:24px;margin:0 0 14px 0;font-weight:900;color:#2b2a35}
     .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-    .grade-card{min-height:102px;background:#fff;border-radius:14px;position:relative;padding:14px 16px 12px;box-shadow:0 1px 0 rgba(42,37,72,.015)}
+    .grade-card{min-height:102px;background:#fff;border-radius:14px;position:relative;padding:14px 16px 12px;box-shadow:0 1px 0 rgba(42,37,72,.015);cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+    .grade-card:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(35,31,65,.07)}
     .lesson{font-size:15px;line-height:19px;font-weight:800;letter-spacing:-.1px;color:#2b2a35;margin:0 36px 3px 0}.period{font-size:13px;line-height:16px;color:#757381;margin:0}.divider{height:1px;background:#eeedf3;margin-top:11px}.open-dot{position:absolute;right:16px;top:21px;width:18px;height:18px;border-radius:50%;background:#fbfbfd;box-shadow:0 2px 7px rgba(35,31,65,.1);display:grid;place-items:center}.open-dot:before{content:"";border-left:5px solid #16052f;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:1px}
-    .mark{display:inline-flex;align-items:center;gap:5px;height:25px;min-width:38px;padding:0 9px;background:#f1fbf7;border-radius:5px;margin-top:10px;color:#39424d;font-size:14px;font-weight:700}.check{width:13px;height:13px;border-radius:2.5px;background:var(--green);position:relative;display:inline-block;box-shadow:0 0 0 1px rgba(25,150,75,.08) inset}.check:after{content:"";position:absolute;left:3px;top:3px;width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
-
+    .mark{display:inline-flex;align-items:center;gap:5px;height:25px;min-width:38px;padding:0 9px;background:#f1fbf7;border-radius:5px;margin-top:10px;color:#39424d;font-size:14px;font-weight:700;cursor:pointer}.check{width:13px;height:13px;border-radius:2.5px;background:var(--green);position:relative;display:inline-block;box-shadow:0 0 0 1px rgba(25,150,75,.08) inset}.check:after{content:"";position:absolute;left:3px;top:3px;width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
     .footer{max-width:960px;margin:20px auto 0;border-top:1px solid #dedde6;padding:18px 18px 28px;color:#8a8894}.agreement{margin:0 0 12px 0;color:#2c2b35;font-size:13px;line-height:16px;font-weight:800}.write-btn{height:38px;max-width:360px;border:1px solid #b8b7c0;border-radius:7px;background:transparent;color:#2f2d38;font-size:13px;font-weight:600;display:grid;place-items:center;margin-bottom:12px}.support{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}.support span{font-size:13px;color:#a1a0aa}.support b{font-size:14px;color:#3f3d47;font-weight:800}.stores{display:flex;gap:8px;margin-bottom:14px}.store{height:34px;width:110px;border-radius:4px;background:#050505;color:#fff;display:flex;align-items:center;padding:3px 7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);overflow:hidden}.play-triangle{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid #3bc86e;position:relative;margin-right:6px}.play-triangle:before{content:"";position:absolute;left:-17px;top:-10px;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid #41a5ff;clip-path:polygon(0 0,100% 50%,0 50%)}.play-triangle:after{content:"";position:absolute;left:-17px;top:0;border-top:10px solid transparent;border-left:17px solid #ffd24d;clip-path:polygon(0 0,100% 0,0 100%)}.apple-icon{font-size:19px;margin-right:6px;line-height:1}.store-text{display:flex;flex-direction:column;line-height:1}.store-text small{font-size:6px;text-transform:uppercase;letter-spacing:.15px;opacity:.92}.store-text strong{font-size:13px;font-weight:800;letter-spacing:-.3px}.store.apple .store-text small{text-transform:none;font-size:6.6px}.store.apple .store-text strong{font-size:12.5px}
     .org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px}.org{display:flex;align-items:flex-start;min-height:27px}.org-icon{width:25px;height:25px;flex:0 0 25px;margin-right:8px;border-radius:50%;background:#d92635;position:relative;box-shadow:0 0 0 1px rgba(255,255,255,.7) inset,0 0 0 1px rgba(0,0,0,.06)}.org-icon:before{content:"";position:absolute;inset:5px;border-radius:50%;background:#f4d94f}.org-icon:after{content:"";position:absolute;left:9px;top:4px;width:7px;height:16px;background:#2aae62;border-radius:4px 4px 2px 2px;transform:rotate(25deg)}.org.moscow .org-icon{border-radius:2px;background:linear-gradient(180deg,#be1834 0 46%,#f6f6f6 46% 54%,#1e8d4d 54%)}.org.moscow .org-icon:before{inset:6px 8px;background:#fff;border-radius:2px}.org.moscow .org-icon:after{left:10px;top:7px;width:5px;height:11px;background:#2aae62}.org.min .org-icon{background:#d2d2d7;border-radius:50%}.org.min .org-icon:before{inset:2px;background:radial-gradient(circle,#8e8d96 0 21%,transparent 23%),repeating-conic-gradient(#9b9aa2 0 12deg,transparent 12deg 24deg);border-radius:50%}.org.min .org-icon:after{display:none}.org.edu .org-icon{background:#d01d34;border-radius:50%}.org.edu .org-icon:before{inset:3px;background:#f2d853;border-radius:50%}.org.edu .org-icon:after{left:8px;top:7px;width:10px;height:10px;background:#2aae62;border-radius:50%;transform:none}.org-text{font-size:12px;line-height:14px;color:#96949e}.version{font-size:11px;color:#a9a7b0;margin-top:14px}
-
-    @media (max-width:600px){
-      .appbar{padding:0 10px;height:42px}.content{padding:14px}.profile-zone{padding:7px 14px}.grades{grid-template-columns:1fr;gap:9px}.grade-card{min-height:92px}.lesson{font-size:14px;line-height:18px}.period{font-size:12px}.footer{padding-left:14px;padding-right:14px}.support{display:block}.support b{display:block;margin-top:4px}.brand{font-size:10px;line-height:9px;width:44px}.school-tile{width:21px;height:21px}.magic,.bell{width:21px;height:21px;margin-right:12px}.badge{font-size:9px;height:16px;min-width:16px}.user-round{width:25px;height:25px}
-    }
+    .modal-overlay{position:fixed;inset:0;background:rgba(13,10,23,.62);display:none;align-items:flex-end;justify-content:center;padding:14px;z-index:1000}.modal-overlay.is-open{display:flex}.modal{width:min(100%,420px);background:#fff;border-radius:20px 20px 16px 16px;box-shadow:0 30px 60px rgba(10,8,20,.28);overflow:hidden}
+    .modal-header{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 14px;border-bottom:1px solid #f0eff5}.modal-title{font-size:20px;line-height:24px;font-weight:900;color:#24222d}.modal-close{border:0;background:transparent;padding:0;width:34px;height:34px;border-radius:50%;font-size:30px;line-height:1;color:#6e6b78;cursor:pointer}
+    .modal-body{padding:12px 18px 18px;background:linear-gradient(180deg,#f7f7fb 0,#fff 40%)}.modal-section-title{font-size:13px;line-height:16px;font-weight:900;letter-spacing:.06em;color:#6e6d78;margin:4px 0 14px;text-transform:uppercase}.period-card{background:#fff;border-radius:18px;padding:16px 14px;box-shadow:0 1px 0 rgba(32,29,53,.02),0 10px 25px rgba(29,25,49,.04);margin-bottom:12px}.period-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.period-name{font-size:18px;line-height:22px;font-weight:900;color:#26242f}.period-meta{font-size:14px;line-height:18px;color:#777583;margin-top:5px}.period-badge{display:inline-flex;align-items:center;gap:5px;height:34px;padding:0 12px;border-radius:8px;background:#49c45a;color:#fff;font-size:15px;font-weight:800;white-space:nowrap}.period-badge .check{background:rgba(255,255,255,.25)}.grade-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 14px;padding-top:14px}.grade-chip{height:48px;border-radius:12px;background:#f4f5fb;display:grid;place-items:center;font-size:17px;font-weight:800;color:#22212c;border:1px solid transparent}.grade-chip.active{background:#fff;border-color:#cd4d4d;box-shadow:0 0 0 1px rgba(205,77,77,.12) inset}.grade-chip.good{background:#f2fbea}.grade-chip.good .check{transform:scale(.92)}.modal-footer{padding:14px 18px 18px;border-top:1px solid #ececf2;background:#fafafe}.close-btn{height:44px;padding:0 18px;border:1px solid #c8c7d2;border-radius:10px;background:#fff;color:#2c2b35;font-size:15px;font-weight:500;cursor:pointer;box-shadow:0 1px 2px rgba(28,24,54,.04)}
+    @media (max-width:600px){.appbar{padding:0 10px;height:42px}.content{padding:14px}.profile-zone{padding:7px 14px}.grades{grid-template-columns:1fr;gap:9px}.grade-card{min-height:92px}.lesson{font-size:14px;line-height:18px}.period{font-size:12px}.footer{padding-left:14px;padding-right:14px}.support{display:block}.support b{display:block;margin-top:4px}.brand{font-size:10px;line-height:9px;width:44px}.school-tile{width:21px;height:21px}.magic,.bell{width:21px;height:21px;margin-right:12px}.badge{font-size:9px;height:16px;min-width:16px}.user-round{width:25px;height:25px}.modal-overlay{padding:0}.modal{width:100%;min-height:78vh;border-radius:18px 18px 0 0}.grade-grid{gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}.grade-chip{height:44px;font-size:16px}}
   </style>
 </head>
 <body>
@@ -86,25 +72,24 @@
     <main class="content">
       <h1>Итоговые оценки</h1>
       <div class="grades">
-        <section class="grade-card"><p class="lesson">Алгебра</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Биология</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Вероятность и статистика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">География</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
-        <section class="grade-card"><p class="lesson">Геометрия</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Государственный (татарский) язык Республики Татарстан</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>3</span></div></section>
-        <section class="grade-card"><p class="lesson">Информатика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
-        <section class="grade-card"><p class="lesson">История</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Общество</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Основы Безопасности и Защиты Родины</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
-        <section class="grade-card"><p class="lesson">Русский язык</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Физика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Химия</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-
-        <section class="grade-card"><p class="lesson">Иностранный (английский) язык</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Литература</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Музыка</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
-        <section class="grade-card"><p class="lesson">Труд (технология)</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
-        <section class="grade-card"><p class="lesson">Физическая культура</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
+        <section class="grade-card" data-subject="Алгебра" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Алгебра</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Биология" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Биология</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Вероятность и статистика" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Вероятность и статистика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="География" data-period="3 триместр 03 март -26 май" data-grade="5"><p class="lesson">География</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
+        <section class="grade-card" data-subject="Геометрия" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Геометрия</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Государственный (татарский) язык Республики Татарстан" data-period="3 триместр 03 март -26 май" data-grade="3"><p class="lesson">Государственный (татарский) язык Республики Татарстан</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>3</span></div></section>
+        <section class="grade-card" data-subject="Информатика" data-period="3 триместр 03 март -26 май" data-grade="5"><p class="lesson">Информатика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
+        <section class="grade-card" data-subject="История" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">История</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Общество" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Общество</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Основы Безопасности и Защиты Родины" data-period="3 триместр 03 март -26 май" data-grade="5"><p class="lesson">Основы Безопасности и Защиты Родины</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
+        <section class="grade-card" data-subject="Русский язык" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Русский язык</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Физика" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Физика</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Химия" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Химия</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Иностранный (английский) язык" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Иностранный (английский) язык</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Литература" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Литература</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Музыка" data-period="3 триместр 03 март -26 май" data-grade="4"><p class="lesson">Музыка</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>4</span></div></section>
+        <section class="grade-card" data-subject="Труд (технология)" data-period="3 триместр 03 март -26 май" data-grade="5"><p class="lesson">Труд (технология)</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
+        <section class="grade-card" data-subject="Физическая культура" data-period="3 триместр 03 март -26 май" data-grade="5"><p class="lesson">Физическая культура</p><p class="period">3 триместр 03 март -26 май</p><span class="open-dot" aria-hidden="true"></span><div class="divider"></div><div class="mark"><span class="check"></span><span>5</span></div></section>
       </div>
     </main>
 
@@ -125,5 +110,95 @@
       <div class="version">Версия 4.14.1</div>
     </footer>
   </div>
+
+  <div class="modal-overlay" id="gradeModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gradeModalTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="gradeModalTitle">Успеваемость по предмету</div>
+        <button class="modal-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section-title">Прошлые учебные периоды</div>
+        <div class="period-card">
+          <div class="period-head">
+            <div>
+              <div class="period-name">Годовая оценка</div>
+              <div class="period-meta">Итоговая оценка за учебный год</div>
+            </div>
+            <div class="period-badge"><span class="check"></span><span class="modal-year-grade">4</span></div>
+          </div>
+          <div class="grade-grid">
+            <div class="grade-chip good"><span class="check"></span><span>5</span></div>
+            <div class="grade-chip good"><span class="check"></span><span>4</span></div>
+            <div class="grade-chip good"><span class="check"></span><span>4</span></div>
+            <div class="grade-chip good"><span class="check"></span><span>4</span></div>
+          </div>
+        </div>
+        <div class="period-card">
+          <div class="period-head" style="align-items:flex-start">
+            <div>
+              <div class="period-name modal-period-name">3 триместр</div>
+              <div class="period-meta modal-period-range">2 мар - 26 май</div>
+            </div>
+            <div class="period-badge"><span class="check"></span><span class="modal-current-grade">4</span></div>
+          </div>
+          <div class="grade-grid">
+            <div class="grade-chip">4</div>
+            <div class="grade-chip">4</div>
+            <div class="grade-chip">3</div>
+            <div class="grade-chip active">4</div>
+            <div class="grade-chip">5</div>
+            <div class="grade-chip">2</div>
+            <div class="grade-chip">3</div>
+            <div class="grade-chip">5</div>
+            <div class="grade-chip">5</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-btn" type="button">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('gradeModal');
+    const modalTitle = document.getElementById('gradeModalTitle');
+    const periodName = document.querySelector('.modal-period-name');
+    const periodRange = document.querySelector('.modal-period-range');
+    const currentGrade = document.querySelector('.modal-current-grade');
+    const yearGrade = document.querySelector('.modal-year-grade');
+    const openers = document.querySelectorAll('.grade-card');
+    const closeButtons = [modal.querySelector('.modal-close'), modal.querySelector('.close-btn')];
+
+    function openModal(card) {
+      modalTitle.textContent = 'Успеваемость по предмету';
+      periodName.textContent = card.dataset.subject ? '3 триместр' : '3 триместр';
+      periodRange.textContent = card.dataset.period || '2 мар - 26 май';
+      currentGrade.textContent = card.dataset.grade || '4';
+      yearGrade.textContent = card.dataset.grade || '4';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    openers.forEach((card) => {
+      card.addEventListener('click', () => openModal(card));
+    });
+
+    closeButtons.forEach((btn) => btn.addEventListener('click', closeModal));
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  </script>
 </body>
 </html>
